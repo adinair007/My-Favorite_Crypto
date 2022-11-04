@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src"<script src="https://cdn.tailwindcss.com"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./Assets/css/style.css">
     <title>My Favorite Crypto</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <section class="search-bar" id="search">
-            <form id="form">
-                <input type="search" id="query" name="q" placeholder="Search...">
-                <button>Search</button>
-            </form>
-        </section>
-        <header>
-            <h1> Welcome! </h1>
-            <p class="current-time" id="today">
-            </p>
-        </header>
-        <h1> Your Top 5 Crypto</h1>
-        <section class="container mx-auto px-4">
-            <div class="top-5" id="favorites">
-            </div>
-            <h2 class="market-list" id="market">
-            </h2>
-        </section>
+      <header class = "callout primary small text-center">
+        <h1>Welcome to MyFavoriteCrypto!</h1>
+        <p class="current-time" id="today"></p>
+      </header>
+      
+      <section class="search-bar" id="search">
+        <form class="grid-container" id="cryptoSearch-form">
+          <div class="grid-x grid-padding-x">
+            <div class="search-here medium-6 cell ">
+              <label>Search Crypto
+                <input type="text" id="user-input" class="form-input" placeholder=".medium-6.cell">
+              </label>
+          <button class="button primary" type="submit">Search</button>
+        </form>
+      </section>
+      <section class="grid-container fluid text-center topFive" id="topFive">
+          <div class ="card-divider text-center" id="topFive-header">
+            <h3 class="text-center top5-title">Your Top 5 Crypto</h3>
+          </div>
+          <div class = "card-section text-center crypto-list" id="topFive-list">
+            Top 5 list
+          </div>
+        <!-- <h2 class="market-list" id="market"></h2> -->
+      </section>
     </main>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src = "Assets/js/script.js"></script>
+  </body>
 </html>
