@@ -1,3 +1,16 @@
+body {
+    background-color: rgb(45, 45, 192);
+}
 .flex-center {
     justify-content: center !important;
 }
+
+.entire-list {
+    border-color: aquamarine;
+    padding: 10rem;
+    background-color: blue;
+    margin-top: 5rem;
+
+
+}
+
