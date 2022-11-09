@@ -1,4 +1,4 @@
-var marketListEl = document.getElementById("market-list");
+var marketListEl = document.getElementById("current-price");
 
 
 var liveMarket = function () {
