@@ -16,14 +16,28 @@ liveMarket();
 
 var currentMarket = function(market) {
   marketListEl.textContent = "";
-  var bitcoinEl = document.createElement("span");
-  bitcoinEl.textContent = "Bitcoin: " + market.Data[0].DISPLAY.USD.PRICE;
-  bitcoinEl.classList = "list-group-item";
-  marketListEl.appendChild(bitcoinEl);
-
-  var ethereumEl = document.createElement("span");
-  ethereumEl.textContent = " Ethereum:" + market.Data[1].DISPLAY.USD.PRICE;
-  ethereumEl.classList = "list-group-item";
-  marketListEl.appendChild(ethereumEl);
-
+  var dataListEL = market.Data;
+  for(var i = 0; i < dataListEL.length; i++) {
+    var cryptoList = dataListEL[i];
+    var cryptoName = document.getElementById ("coin-name")
+    cryptoName.textContent= cryptoList.coinInfo.FullName
+    marketListEl.appendChild(cryptoName) 
+    
+  }
 }
+
+// var currentMarket = function(market) {
+//   marketListEl.textContent = "";
+//   var bitcoinEl = document.createElement("span");
+//   bitcoinEl.textContent = "Bitcoin: " + market.Data[0].DISPLAY.USD.PRICE;
+//   bitcoinEl.classList = "list-group-item";
+//   marketListEl.appendChild(bitcoinEl);
+
+//   var ethereumEl = document.createElement("span");
+//   ethereumEl.textContent = " Ethereum:" + market.Data[1].DISPLAY.USD.PRICE;
+//   ethereumEl.classList = "list-group-item";
+//   marketListEl.appendChild(ethereumEl);
+// }
+
+
+
