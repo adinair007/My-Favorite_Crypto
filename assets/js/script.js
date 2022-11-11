@@ -1,4 +1,10 @@
 var marketListEl = document.getElementById("market-table");
+var topFiveEl = document.getElementById("topFive-list");
+
+
+
+
+
 
 var liveMarket = function () {
   var apiURL =
@@ -11,6 +17,8 @@ var liveMarket = function () {
   });
 };
 liveMarket();
+
+
 
 var currentMarket = function (market) {
   marketListEl.textContent = "";
@@ -29,17 +37,21 @@ var currentMarket = function (market) {
 
   var dataListEL = market.Data;
   for (var i = 0; i < dataListEL.length; i++) {
+    
     var cryptoList = dataListEL[i];
+    
     var cryptoData = document.createElement("tr");
-    cryptoData.classList = "table bg=white color=black";
 
     var cryptoSymbol = document.createElement("td");
-    cryptoSymbol.textContent = cryptoList.CoinInfo.ImageUrl;
+    var cryptoIcon = document.createElement("img");
+    cryptoIcon.setAttribute("src", `https://www.cryptocompare.com/${cryptoList.CoinInfo.ImageUrl}`);
+    cryptoIcon.style.width = '35px';
+    cryptoIcon.style.height = 'auto';
+    cryptoSymbol.appendChild(cryptoIcon);
     cryptoData.appendChild(cryptoSymbol);
     
     var cryptoName = document.createElement("td");
-    cryptoName.textContent =
-      cryptoList.CoinInfo.FullName + "\n" + cryptoList.CoinInfo.Name;
+    cryptoName.textContent = cryptoList.CoinInfo.FullName + "\n" + cryptoList.CoinInfo.Name;    
     cryptoData.appendChild(cryptoName);
 
   
