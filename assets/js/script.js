@@ -1,43 +1,85 @@
-var marketListEl = document.getElementById("current-price");
+var marketListEl = document.getElementById("market-table");
+var topFiveEl = document.getElementById("topFive-list");
+
+
+
+
 
 
 var liveMarket = function () {
   var apiURL =
     "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD&api_key=7a0dd8d530d2272b9577a48c3a0653fe13dea219bd9210b461767355f5c12272";
-  fetch(apiURL,).then(function (response) {
-    console.log(response);
+  fetch(apiURL).then(function (response) {
     response.json().then(function (data) {
-    console.log(data);
-    currentMarket(data);
+      console.log(data);
+      currentMarket(data);
     });
   });
 };
 liveMarket();
 
-var currentMarket = function(market) {
+
+
+var currentMarket = function (market) {
   marketListEl.textContent = "";
+  let headers = ["#", "Coin", "Price", "Market Cap", "24h Change", "24h High"];
+  var table = document.createElement("table");
+  var headerRow = document.createElement("tr");
+
+  headers.forEach((headerText) => {
+    let header = document.createElement("th");
+    let textNode = document.createTextNode(headerText);
+    header.appendChild(textNode);
+    headerRow.appendChild(header);
+  });
+  table.appendChild(headerRow);
+  marketListEl.appendChild(table);
+
   var dataListEL = market.Data;
-  for(var i = 0; i < dataListEL.length; i++) {
-    var cryptoList = dataListEL[i];
-    var cryptoName = document.getElementById ("coin-name")
-    cryptoName.textContent= cryptoList.coinInfo.FullName
-    marketListEl.appendChild(cryptoName) 
+  for (var i = 0; i < dataListEL.length; i++) {
     
+    var cryptoList = dataListEL[i];
+    
+    var cryptoData = document.createElement("tr");
+
+    var cryptoSymbol = document.createElement("td");
+    var cryptoIcon = document.createElement("img");
+    cryptoIcon.setAttribute("src", `https://www.cryptocompare.com/${cryptoList.CoinInfo.ImageUrl}`);
+    cryptoIcon.style.width = '35px';
+    cryptoIcon.style.height = 'auto';
+    cryptoSymbol.appendChild(cryptoIcon);
+    cryptoData.appendChild(cryptoSymbol);
+    
+    var cryptoName = document.createElement("td");
+    cryptoName.textContent = cryptoList.CoinInfo.FullName + "\n" + cryptoList.CoinInfo.Name;    
+    cryptoData.appendChild(cryptoName);
+
+  
+    var cryptoPrice = document.createElement("td");
+    cryptoPrice.textContent = cryptoList.DISPLAY.USD.PRICE;
+    cryptoData.appendChild(cryptoPrice);
+
+    var marketCap = document.createElement("td");
+    marketCap.textContent = cryptoList.DISPLAY.USD.CIRCULATINGSUPPLYMKTCAP;
+    cryptoData.appendChild(marketCap);
+
+    var dayChange = document.createElement("td");
+    dayChange.textContent = cryptoList.DISPLAY.USD.CHANGE24HOUR;
+    cryptoData.appendChild(dayChange);
+
+    var dayHigh = document.createElement("td");
+    dayHigh.textContent = cryptoList.DISPLAY.USD.HIGH24HOUR;
+    cryptoData.appendChild(dayHigh);
+
+    table.appendChild(cryptoData);
+
+    marketListEl.appendChild(table);
   }
-}
 
-// var currentMarket = function(market) {
-//   marketListEl.textContent = "";
-//   var bitcoinEl = document.createElement("span");
-//   bitcoinEl.textContent = "Bitcoin: " + market.Data[0].DISPLAY.USD.PRICE;
-//   bitcoinEl.classList = "list-group-item";
-//   marketListEl.appendChild(bitcoinEl);
-
-//   var ethereumEl = document.createElement("span");
-//   ethereumEl.textContent = " Ethereum:" + market.Data[1].DISPLAY.USD.PRICE;
-//   ethereumEl.classList = "list-group-item";
-//   marketListEl.appendChild(ethereumEl);
-// }
+  var cryptoNameBtn = document.createElement("button")
+  addEventListener("on-click")
+  cryptoName.appendChild(cryptoNameBtn)
 
 
 
+};
