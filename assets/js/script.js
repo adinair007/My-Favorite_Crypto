@@ -16,7 +16,6 @@ liveMarket();
 var currentMarket = function (market) {
   marketListEl.textContent = "";
   let headers = [
-    "#",
     "Symbol",
     "Coin Name",
     "Price",
