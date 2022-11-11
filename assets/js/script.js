@@ -35,7 +35,7 @@ var currentMarket = function (market) {
 
     var cryptoSymbol = document.createElement("td");
     cryptoSymbol.textContent = cryptoList.CoinInfo.ImageUrl;
-    cryptoData.appendChild(cryptoSymbol);
+    cryptoData.appendChild(cryptoSymbol); 
     
     var cryptoName = document.createElement("td");
     cryptoName.textContent =
@@ -63,4 +63,11 @@ var currentMarket = function (market) {
 
     marketListEl.appendChild(table);
   }
+
+  var cryptoNameBtn = document.createElement("button")
+  addEventListener("on-click")
+  cryptoName.appendChild(cryptoNameBtn)
+
+
+
 };
