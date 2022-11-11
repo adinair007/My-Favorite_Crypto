@@ -37,9 +37,9 @@ var currentMarket = function (market) {
 
   var dataListEL = market.Data;
   for (var i = 0; i < dataListEL.length; i++) {
-    
+
     var cryptoList = dataListEL[i];
-    
+
     var cryptoData = document.createElement("tr");
 
     var cryptoSymbol = document.createElement("td");
@@ -49,12 +49,12 @@ var currentMarket = function (market) {
     cryptoIcon.style.height = 'auto';
     cryptoSymbol.appendChild(cryptoIcon);
     cryptoData.appendChild(cryptoSymbol);
-    
+
     var cryptoName = document.createElement("td");
-    cryptoName.textContent = cryptoList.CoinInfo.FullName + "\n" + cryptoList.CoinInfo.Name;    
+    cryptoName.textContent = cryptoList.CoinInfo.FullName + "\n" + cryptoList.CoinInfo.Name;
     cryptoData.appendChild(cryptoName);
 
-  
+
     var cryptoPrice = document.createElement("td");
     cryptoPrice.textContent = cryptoList.DISPLAY.USD.PRICE;
     cryptoData.appendChild(cryptoPrice);
@@ -71,15 +71,51 @@ var currentMarket = function (market) {
     dayHigh.textContent = cryptoList.DISPLAY.USD.HIGH24HOUR;
     cryptoData.appendChild(dayHigh);
 
+    var cryptoBtns = document.createElement("td");
+    var ButtonPlus = document.createElement("button");
+    ButtonPlus.setAttribute("click","submit");
+    ButtonPlus.textContent="+"
+    ButtonPlus.classList.add("button")
+
+    
+
+
+    // ButtonPlus.addEventListener("click")
+    // cryptoIcon.style.width = '35px';
+    // cryptoIcon.style.height = 'auto';
+    cryptoBtns.appendChild(ButtonPlus);
+    cryptoData.appendChild(cryptoBtns);
+
+
+    
+
+
+
     table.appendChild(cryptoData);
 
     marketListEl.appendChild(table);
+
+
+
+    // function createButtons() { 
+    //     var button = document.createElement("button")
+    //     var buttonDiv = document.getElementById("buttons");
+    //     buttonDiv.appendChild(button);
+    //     cryptoName.appendChild(buttonDiv)
+      
+
+    // }
+
+    // createButtons()
+
+ 
   }
+}
 
-  var cryptoNameBtn = document.createElement("button")
-  addEventListener("on-click")
-  cryptoName.appendChild(cryptoNameBtn)
+var topFive = function() {
+  cryptoBtns.addEventListener("click",topFive)
+  localStorage.setItem("currentMarket",JSON.stringify(currentMarket))
+  
 
-
-
-};
+  
+}
