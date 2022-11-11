@@ -1,5 +1,10 @@
 var marketListEl = document.getElementById("market-table");
 var topFiveEl = document.getElementById("topFive-list");
+var currentDate = moment().format('LLLL');
+
+
+
+$("#today").html(currentDate);
 
 var liveMarket = function () {
   var apiURL =
@@ -11,7 +16,6 @@ var liveMarket = function () {
     });
   });
 };
-liveMarket();
 
 var currentMarket = function (market) {
   marketListEl.textContent = "";
@@ -95,8 +99,9 @@ var currentMarket = function (market) {
     cryptoBtns.appendChild(ButtonPlus);
     cryptoData.appendChild(cryptoBtns);
 
+    
+    
     cryptoTable.appendChild(cryptoData);
-
     marketListEl.appendChild(cryptoTable);
   }
 };
@@ -105,3 +110,8 @@ var topFive = function () {
   cryptoBtns.addEventListener("click", topFive);
   localStorage.setItem("currentMarket", JSON.stringify(currentMarket));
 };
+
+
+
+
+liveMarket();
