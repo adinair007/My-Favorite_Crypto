@@ -1,6 +1,12 @@
 var marketListEl = document.getElementById("market-table");
 var topFiveEl = document.getElementById("topFive-list");
 var currentDate = moment().format('LLLL');
+var first = document.getElementById("1");
+var first = document.getElementById("2");
+var first = document.getElementById("3");
+var first = document.getElementById("4");
+var first = document.getElementById("5");
+
 
 
 
@@ -17,6 +23,30 @@ var liveMarket = function () {
   });
 };
 
+var live5Market = function () {
+  var apiURL = "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=5&tsym=USD&api_key=7a0dd8d530d2272b9577a48c3a0653fe13dea219bd9210b461767355f5c12272";
+  fetch(apiURL).then(function (response) {
+    response.json().then(function (data) {
+      console.log(data);
+      top5Market(data);
+    });
+  });
+};
+
+var top5Market = function (top5) {
+  var dataListEL = top5.data
+  first.textContent = dataListEL[0].CoinInfo.FullName + "\n" + dataListEL[0].CoinInfo.Name;
+  topFiveEl.appendChild(first);
+
+
+
+}
+
+
+
+
+
+
 var currentMarket = function (market) {
   marketListEl.textContent = "";
   let headers = [
@@ -27,7 +57,7 @@ var currentMarket = function (market) {
     "24h Change",
     "24h High",
   ];
-  
+
   var cryptoTable = document.createElement("Table");
   cryptoTable.classList.add("hover");
   cryptoTable.style.background = "white";
@@ -55,7 +85,7 @@ var currentMarket = function (market) {
     // cryptoIndex.textContent= Array.indexOf(cryptoList,0);
     // cryptoData.appendChild(cryptoIndex);
 
-    
+
     var cryptoSymbol = document.createElement("td");
     var cryptoIcon = document.createElement("img");
     cryptoIcon.setAttribute(
@@ -99,8 +129,8 @@ var currentMarket = function (market) {
     cryptoBtns.appendChild(ButtonPlus);
     cryptoData.appendChild(cryptoBtns);
 
-    
-    
+
+
     cryptoTable.appendChild(cryptoData);
     marketListEl.appendChild(cryptoTable);
   }
@@ -114,4 +144,6 @@ var topFive = function () {
 
 
 
+
 liveMarket();
+live5Market();
