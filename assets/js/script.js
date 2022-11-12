@@ -2,11 +2,10 @@ var marketListEl = document.getElementById("market-table");
 var topFiveEl = document.getElementById("topFive-list");
 var currentDate = moment().format('LLLL');
 var first = document.getElementById("1");
-var first = document.getElementById("2");
-var first = document.getElementById("3");
-var first = document.getElementById("4");
-var first = document.getElementById("5");
-
+var second = document.getElementById("2");
+var third = document.getElementById("3");
+var fourth = document.getElementById("4");
+var fifth = document.getElementById("5");
 
 
 
@@ -23,29 +22,66 @@ var liveMarket = function () {
   });
 };
 
-var live5Market = function () {
+var live5Market = function(){
   var apiURL = "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=5&tsym=USD&api_key=7a0dd8d530d2272b9577a48c3a0653fe13dea219bd9210b461767355f5c12272";
-  fetch(apiURL).then(function (response) {
-    response.json().then(function (data) {
+  fetch(apiURL).then(function(response){
+    response.json().then(function(data){
       console.log(data);
       top5Market(data);
     });
   });
 };
 
-var top5Market = function (top5) {
-  var dataListEL = top5.data
-  first.textContent = dataListEL[0].CoinInfo.FullName + "\n" + dataListEL[0].CoinInfo.Name;
+var top5Market = function(top5){
+  var dataListEl = top5.Data
+
+
+  var crypto1  = document.createElement("card");
+  crypto1.classList.add("card");
+  
+  var crypto1Header = document.createElement("card-divider")
+  crypto1Header.classList.add("card-divider");
+  crypto1Header.textContent = dataListEl[0].CoinInfo.FullName + "\n" +  dataListEl[0].CoinInfo.Name;
+  crypto1.appendChild(crypto1Header);
+  
+  var crypto1Price = document.createElement("card-section");
+  crypto1Price.classList.add("card-section");
+  crypto1Price.textContent = "Price: " + dataListEl[0].DISPLAY.USD.PRICE;
+  crypto1.appendChild(crypto1Price);
+
+  var crypto1last24 = document.createElement("card-section");
+  crypto1last24.classList.add("card-section");
+  crypto1last24.textContent = "24 Hour Change: " + dataListEl[0].DISPLAY.USD.CHANGE24HOUR;
+  crypto1.appendChild(crypto1last24);
+  
+  first.appendChild(crypto1);
   topFiveEl.appendChild(first);
 
 
+  // first.textContent = dataListEl[0].CoinInfo.FullName + "\n" +  dataListEl[0].CoinInfo.Name;
+  // second.textContent = dataListEl[1].CoinInfo.FullName + "\n" +  dataListEl[1].CoinInfo.Name;
+  // third.textContent = dataListEl[2].CoinInfo.FullName + "\n" +  dataListEl[2].CoinInfo.Name;
+  // fourth.textContent = dataListEl[3].CoinInfo.FullName + "\n" +  dataListEl[3].CoinInfo.Name;
+  // fifth.textContent = dataListEl[4].CoinInfo.FullName + "\n" +  dataListEl[4].CoinInfo.Name;
+  // topFiveEl.appendChild(first);
+  // topFiveEl.appendChild(second);
+  // topFiveEl.appendChild(third);
+  // topFiveEl.appendChild(fourth);
+  // topFiveEl.appendChild(fifth);
+  // topFiveEl.textContent = ""
+//   var top5Card = document.createElement("card");
+//   top5Card.classList.add("card");
+//   var dataListEl = top5.Data
+//   for (var i = 0; i < dataListEl.length; i++)
+//   var top5ListEL = dataListEl[i];
 
+//   var cryptoHead = document.createElement("h4")
+//   cryptoHead.textContent = top5ListEL.CoinInfo.FullName + top5ListEL.CoinInfo.Name;
+//   top5Card.appendChild(cryptoHead);
+//   topFiveEl.appendChild(top5Card);
+
+  
 }
-
-
-
-
-
 
 var currentMarket = function (market) {
   marketListEl.textContent = "";
@@ -143,7 +179,5 @@ var topFive = function () {
 
 
 
-
-
-liveMarket();
 live5Market();
+liveMarket();
