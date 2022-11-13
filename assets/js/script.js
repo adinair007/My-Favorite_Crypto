@@ -115,51 +115,6 @@ var top5Market = function (top5) {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// first.textContent = dataListEl[0].CoinInfo.FullName + "\n" +  dataListEl[0].CoinInfo.Name;
-// second.textContent = dataListEl[1].CoinInfo.FullName + "\n" +  dataListEl[1].CoinInfo.Name;
-// third.textContent = dataListEl[2].CoinInfo.FullName + "\n" +  dataListEl[2].CoinInfo.Name;
-// fourth.textContent = dataListEl[3].CoinInfo.FullName + "\n" +  dataListEl[3].CoinInfo.Name;
-// fifth.textContent = dataListEl[4].CoinInfo.FullName + "\n" +  dataListEl[4].CoinInfo.Name;
-// topFiveEl.appendChild(first);
-// topFiveEl.appendChild(second);
-// topFiveEl.appendChild(third);
-// topFiveEl.appendChild(fourth);
-// topFiveEl.appendChild(fifth);
-// topFiveEl.textContent = ""
-//   var top5Card = document.createElement("card");
-//   top5Card.classList.add("card");
-//   var dataListEl = top5.Data
-//   for (var i = 0; i < dataListEl.length; i++)
-//   var top5ListEL = dataListEl[i];
-
-//   var cryptoHead = document.createElement("h4")
-//   cryptoHead.textContent = top5ListEL.CoinInfo.FullName + top5ListEL.CoinInfo.Name;
-//   top5Card.appendChild(cryptoHead);
-//   topFiveEl.appendChild(top5Card);
-
-
-
-
 var currentMarket = function (market) {
   marketListEl.textContent = "";
   let headers = [
@@ -194,11 +149,6 @@ var currentMarket = function (market) {
 
     var cryptoData = document.createElement("tr");
 
-    // var cryptoIndex = document.createElement("td");
-    // cryptoIndex.textContent= Array.indexOf(cryptoList,0);
-    // cryptoData.appendChild(cryptoIndex);
-
-
     var cryptoSymbol = document.createElement("td");
     var cryptoIcon = document.createElement("img");
     cryptoIcon.setAttribute(
@@ -220,7 +170,7 @@ var currentMarket = function (market) {
     cryptoData.appendChild(cryptoPrice);
 
     var marketCap = document.createElement("td");
-    marketCap.textContent = cryptoList.DISPLAY.USD.CIRCULATINGSUPPLYMKTCAP;
+    marketCap.textContent = cryptoList.DISPLAY.USD.MKTCAP;
     cryptoData.appendChild(marketCap);
 
     var dayChange = document.createElement("td");
@@ -236,13 +186,8 @@ var currentMarket = function (market) {
     ButtonPlus.setAttribute("click", "submit");
     ButtonPlus.textContent = "+";
     ButtonPlus.classList.add("button");
-    // ButtonPlus.style.width = "20px";
-    // ButtonPlus.style.height = "20px";
-    // ButtonPlus.style.textAlign ="center"
     cryptoBtns.appendChild(ButtonPlus);
     cryptoData.appendChild(cryptoBtns);
-
-
 
     cryptoTable.appendChild(cryptoData);
     marketListEl.appendChild(cryptoTable);
