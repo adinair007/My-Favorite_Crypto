@@ -14,6 +14,11 @@ body {
 
 }
 
+
+
+
+
+
 .market-table .wrapper {
     display: flex;
     align-items: center;
@@ -21,29 +26,11 @@ body {
     min-width: max-content;
   }
   
-  .market-table .coin-name {
-    font-size: var(--fs-5);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: var(--transition-1);
-  }
-  
-  .market-table .coin-name .span {
-    color: var(--roman-silver);
-    font-size: var(--fs-7);
-  }
-  
-  .market-table .coin-name:is(:hover, :focus) { color: var(--blue-crayola); }
-  
-  .market-table :is(.rank, .last-price, .market-cap) { font-weight: var(--fw-700); }
-  
-  .market-table .btn-outline {
-    border-width: 2px;
-    padding-inline: 10px;
-  }
+
   
   .market-table .table-row:is(:hover, :focus-within) .btn-outline {
     background-color: var(--blue-crayola);
     border-color: var(--blue-crayola);
   }
+
+
