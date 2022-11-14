@@ -1,13 +1,10 @@
 var marketListEl = document.getElementById("market-table");
 var topFiveEl = document.getElementById("topFive-list");
-var currentDate = moment().format('LLLL');
+var currentDate = moment().format("LLLL");
 var first = document.getElementById("1");
 var second = document.getElementById("2");
 var third = document.getElementById("3");
 var fourth = document.getElementById("4");
-
-
-
 
 $("#today").html(currentDate);
 
@@ -23,7 +20,8 @@ var liveMarket = function () {
 };
 
 var live5Market = function () {
-  var apiURL = "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=5&tsym=USD&api_key=7a0dd8d530d2272b9577a48c3a0653fe13dea219bd9210b461767355f5c12272";
+  var apiURL =
+    "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=5&tsym=USD&api_key=7a0dd8d530d2272b9577a48c3a0653fe13dea219bd9210b461767355f5c12272";
   fetch(apiURL).then(function (response) {
     response.json().then(function (data) {
       console.log(data);
@@ -33,11 +31,7 @@ var live5Market = function () {
 };
 
 var top5Market = function (top5) {
-  var dataListEl = top5.Data
-
-
-
-
+  var dataListEl = top5.Data;
 
   var crypto1 = document.createElement("card");
   crypto1.classList.add("card");
@@ -48,98 +42,80 @@ var top5Market = function (top5) {
   var crypto4 = document.createElement("card");
   crypto4.classList.add("card");
 
-
-
-  
-
-
-
-
-
-  
-  
-    
-
-
-  // top 4 crypto headers 
-  var crypto1Header = document.createElement("card-divider")
+  // top 4 crypto headers
+  var crypto1Header = document.createElement("card-divider");
   crypto1Header.classList.add("card-divider");
-  crypto1Header.textContent = dataListEl[0].CoinInfo.FullName + "\n" + dataListEl[0].CoinInfo.Name;
+  crypto1Header.textContent =
+    dataListEl[0].CoinInfo.FullName + "\n" + dataListEl[0].CoinInfo.Name;
   crypto1.appendChild(crypto1Header);
 
-  var crypto2Header = document.createElement("card-divider")
+  var crypto2Header = document.createElement("card-divider");
   crypto2Header.classList.add("card-divider");
-  crypto2Header.textContent = dataListEl[1].CoinInfo.FullName + "\n" + dataListEl[1].CoinInfo.Name;
+  crypto2Header.textContent =
+    dataListEl[1].CoinInfo.FullName + "\n" + dataListEl[1].CoinInfo.Name;
   crypto2.appendChild(crypto2Header);
 
-  var crypto3Header = document.createElement("card-divider")
+  var crypto3Header = document.createElement("card-divider");
   crypto3Header.classList.add("card-divider");
-  crypto3Header.textContent = dataListEl[2].CoinInfo.FullName + "\n" + dataListEl[2].CoinInfo.Name;
+  crypto3Header.textContent =
+    dataListEl[2].CoinInfo.FullName + "\n" + dataListEl[2].CoinInfo.Name;
   crypto3.appendChild(crypto3Header);
 
-  var crypto4Header = document.createElement("card-divider")
+  var crypto4Header = document.createElement("card-divider");
   crypto4Header.classList.add("card-divider");
-  crypto4Header.textContent = dataListEl[3].CoinInfo.FullName + "\n" + dataListEl[3].CoinInfo.Name;
+  crypto4Header.textContent =
+    dataListEl[3].CoinInfo.FullName + "\n" + dataListEl[3].CoinInfo.Name;
   crypto4.appendChild(crypto4Header);
 
-  var top4symbol=document.createElement("card-section")
+  var top4symbol = document.createElement("card-section");
   var crypto4list = document.createElement("img");
-    crypto4list.setAttribute(
-      "src",
-      `https://www.cryptocompare.com/${dataListEl[0].CoinInfo.ImageUrl}`
-    );
-    crypto4list.style.width = "35px";
-    crypto4list.style.height = "auto";
-    top4symbol.appendChild(crypto4list);
-    crypto1.appendChild(top4symbol);
-    topFiveEl.appendChild(crypto1);
+  crypto4list.setAttribute(
+    "src",
+    `https://www.cryptocompare.com/${dataListEl[0].CoinInfo.ImageUrl}`
+  );
+  crypto4list.style.width = "35px";
+  crypto4list.style.height = "auto";
+  top4symbol.appendChild(crypto4list);
+  crypto1.appendChild(top4symbol);
+  topFiveEl.appendChild(crypto1);
 
-
-    
-  var top4symbol=document.createElement("card-section")
+  var top4symbol = document.createElement("card-section");
   var crypto4list1 = document.createElement("img");
-    crypto4list1.setAttribute(
-      "src",
-      `https://www.cryptocompare.com/${dataListEl[1].CoinInfo.ImageUrl}`
-    );
-    crypto4list1.style.width = "35px";
-    crypto4list1.style.height = "auto";
-    top4symbol.appendChild(crypto4list1);
-    crypto2.appendChild(top4symbol);
-    topFiveEl.appendChild(crypto2);
+  crypto4list1.setAttribute(
+    "src",
+    `https://www.cryptocompare.com/${dataListEl[1].CoinInfo.ImageUrl}`
+  );
+  crypto4list1.style.width = "35px";
+  crypto4list1.style.height = "auto";
+  top4symbol.appendChild(crypto4list1);
+  crypto2.appendChild(top4symbol);
+  topFiveEl.appendChild(crypto2);
 
-     
-  var top4symbol=document.createElement("card-section")
+  var top4symbol = document.createElement("card-section");
   var crypto4list2 = document.createElement("img");
-    crypto4list2.setAttribute(
-      "src",
-      `https://www.cryptocompare.com/${dataListEl[2].CoinInfo.ImageUrl}`
-    );
-    crypto4list2.style.width = "35px";
-    crypto4list2.style.height = "auto";
-    top4symbol.appendChild(crypto4list2);
-    crypto3.appendChild(top4symbol);
-    topFiveEl.appendChild(crypto3);
+  crypto4list2.setAttribute(
+    "src",
+    `https://www.cryptocompare.com/${dataListEl[2].CoinInfo.ImageUrl}`
+  );
+  crypto4list2.style.width = "35px";
+  crypto4list2.style.height = "auto";
+  top4symbol.appendChild(crypto4list2);
+  crypto3.appendChild(top4symbol);
+  topFiveEl.appendChild(crypto3);
 
-  var top4symbol=document.createElement("card-section")
+  var top4symbol = document.createElement("card-section");
   var crypto4list3 = document.createElement("img");
-    crypto4list3.setAttribute(
-      "src",
-      `https://www.cryptocompare.com/${dataListEl[3].CoinInfo.ImageUrl}`
-    );
-    crypto4list3.style.width = "35px";
-    crypto4list3.style.height = "auto";
-    top4symbol.appendChild(crypto4list3);
-    crypto4.appendChild(top4symbol);
-    topFiveEl.appendChild(crypto4);
-    
-    
-    
-    
+  crypto4list3.setAttribute(
+    "src",
+    `https://www.cryptocompare.com/${dataListEl[3].CoinInfo.ImageUrl}`
+  );
+  crypto4list3.style.width = "35px";
+  crypto4list3.style.height = "auto";
+  top4symbol.appendChild(crypto4list3);
+  crypto4.appendChild(top4symbol);
+  topFiveEl.appendChild(crypto4);
 
-
-
-  // top 4 crypto prices  
+  // top 4 crypto prices
   var crypto1Price = document.createElement("card-section");
   crypto1Price.classList.add("card-section");
   crypto1Price.textContent = "Price: " + dataListEl[0].DISPLAY.USD.PRICE;
@@ -159,95 +135,38 @@ var top5Market = function (top5) {
   crypto4Price.classList.add("card-section");
   crypto4Price.textContent = "Price: " + dataListEl[3].DISPLAY.USD.PRICE;
   crypto4.appendChild(crypto4Price);
-  // top 4 crypto last 24 hours 
+  // top 4 crypto last 24 hours
   var crypto1last24 = document.createElement("card-section");
   crypto1last24.classList.add("card-section");
-  crypto1last24.textContent = "24 Hour Change: " + dataListEl[0].DISPLAY.USD.CHANGE24HOUR;
+  crypto1last24.textContent =
+    "24 Hour Change: " + dataListEl[0].DISPLAY.USD.CHANGE24HOUR;
   crypto1.appendChild(crypto1last24);
 
   var crypto2last24 = document.createElement("card-section");
   crypto2last24.classList.add("card-section");
-  crypto2last24.textContent = "24 Hour Change: " + dataListEl[1].DISPLAY.USD.CHANGE24HOUR;
+  crypto2last24.textContent =
+    "24 Hour Change: " + dataListEl[1].DISPLAY.USD.CHANGE24HOUR;
   crypto2.appendChild(crypto2last24);
 
   var crypto3last24 = document.createElement("card-section");
   crypto3last24.classList.add("card-section");
-  crypto3last24.textContent = "24 Hour Change: " + dataListEl[2].DISPLAY.USD.CHANGE24HOUR;
+  crypto3last24.textContent =
+    "24 Hour Change: " + dataListEl[2].DISPLAY.USD.CHANGE24HOUR;
   crypto3.appendChild(crypto3last24);
 
   var crypto4last24 = document.createElement("card-section");
   crypto4last24.classList.add("card-section");
-  crypto4last24.textContent = "24 Hour Change: " + dataListEl[3].DISPLAY.USD.CHANGE24HOUR;
+  crypto4last24.textContent =
+    "24 Hour Change: " + dataListEl[3].DISPLAY.USD.CHANGE24HOUR;
   crypto4.appendChild(crypto4last24);
-
-
-
-  
-  
-
-  
-
-
-
-  // topFiveEl.style.background = "white";
-  // topFiveEl.style.textAlign = "center";
-
 
   fourth.appendChild(crypto4);
   third.appendChild(crypto3);
   second.appendChild(crypto2);
   first.appendChild(crypto1);
   topFiveEl.appendChild(first);
+};
 
-}
-
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// first.textContent = dataListEl[0].CoinInfo.FullName + "\n" +  dataListEl[0].CoinInfo.Name;
-// second.textContent = dataListEl[1].CoinInfo.FullName + "\n" +  dataListEl[1].CoinInfo.Name;
-// third.textContent = dataListEl[2].CoinInfo.FullName + "\n" +  dataListEl[2].CoinInfo.Name;
-// fourth.textContent = dataListEl[3].CoinInfo.FullName + "\n" +  dataListEl[3].CoinInfo.Name;
-// fifth.textContent = dataListEl[4].CoinInfo.FullName + "\n" +  dataListEl[4].CoinInfo.Name;
-// topFiveEl.appendChild(first);
-// topFiveEl.appendChild(second);
-// topFiveEl.appendChild(third);
-// topFiveEl.appendChild(fourth);
-// topFiveEl.appendChild(fifth);
-// topFiveEl.textContent = ""
-//   var top5Card = document.createElement("card");
-//   top5Card.classList.add("card");
-//   var dataListEl = top5.Data
-//   for (var i = 0; i < dataListEl.length; i++)
-//   var top5ListEL = dataListEl[i];
-
-//   var cryptoHead = document.createElement("h4")
-//   cryptoHead.textContent = top5ListEL.CoinInfo.FullName + top5ListEL.CoinInfo.Name;
-//   top5Card.appendChild(cryptoHead);
-//   topFiveEl.appendChild(top5Card);
-
-
-
-
->>>>>>> dad89c7d05bb039137a1040319099e91eb766f32
 var currentMarket = function (market) {
   marketListEl.textContent = "";
   let headers = [
@@ -332,8 +251,5 @@ var topFive = function () {
   localStorage.setItem("currentMarket", JSON.stringify(currentMarket));
 };
 
-
-
 live5Market();
 liveMarket();
-
