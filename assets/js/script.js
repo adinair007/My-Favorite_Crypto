@@ -14,8 +14,8 @@ var liveMarket = function () {
   fetch(apiURL).then(function (response) {
     response.json().then(function (data) {
       console.log(data);
-      currentMarket(data);
       top5Market(data);
+      currentMarket(data);
     });
   });
 };
@@ -125,6 +125,7 @@ var top5Market = function (top5) {
   crypto4Price.classList.add("card-section");
   crypto4Price.textContent = "Price: " + dataListEl[3].DISPLAY.USD.PRICE;
   crypto4.appendChild(crypto4Price);
+  
   // top 4 crypto last 24 hours
   var crypto1last24 = document.createElement("card-section");
   crypto1last24.classList.add("card-section");
@@ -150,7 +151,7 @@ var top5Market = function (top5) {
     "24 Hour Change: " + dataListEl[3].DISPLAY.USD.CHANGE24HOUR;
   crypto4.appendChild(crypto4last24);
 
-
+//--Adding overview button to cards--
   var crypto1Link = document.createElement("card-section")
   crypto1Link.classList.add("card-section");
   var crypto1btn = document.createElement("button")
