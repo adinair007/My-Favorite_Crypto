@@ -292,11 +292,4 @@ var currentMarket = function (market) {
     marketListEl.appendChild(cryptoTable);
   }
 };
-
-var topFive = function () {
-  cryptoBtns.addEventListener("click", topFive);
-  localStorage.setItem("currentMarket", JSON.stringify(currentMarket));
-};
-
-// live5Market();
 liveMarket();
