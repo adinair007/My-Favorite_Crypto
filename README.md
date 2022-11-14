@@ -2,7 +2,7 @@
 
 SMU Bootcamp Project 1: Interactive Front-End Project
 
-Deployed Application: __________________________________
+Deployed Application: https://adinair007.github.io/My-Favorite_Crypto/
 
 
 ## Description
