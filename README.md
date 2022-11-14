@@ -58,7 +58,13 @@ User directed to Crypto Compare when coin is selected
 
 
 Select a Coin from the List
-<img width="1348" alt="Screen Shot 2022-11-14 at 9 49 56 AM" src="https://user-images.githubusercontent.com/114618684/201705960-e5eb942f-7bbe-4f9e-8de5-de9e1cf48e42.png"
+<img width="1348" alt="Screen Shot 2022-11-14 at 9 49 56 AM" src="https://user-images.githubusercontent.com/114618684/201723502-da1c3420-be29-4dde-bd38-5499bebf39e1.png">
+
+
+
+User directed to Crypto Compare when coin is selected
+<img width="1334" alt="Screen Shot 2022-11-14 at 11 16 07 AM" src="https://user-images.githubusercontent.com/114618684/201723955-6548cb37-193b-4c57-ba98-e94f7bfc436b.png">
+
 
 
 
@@ -76,7 +82,7 @@ https://github.com/Staygold93
 Dominique Garrett
 https://github.com/DominiqueGarrett
 
-Third-party assets that require attribution: _____________________________
+Third-party assets that require attribution: Cryptocompare API
 
 
 Tutorials: ____________________________
@@ -88,4 +94,5 @@ MIT License
 
 🏆 
 
-# Technologies Used: HTML, CSS, JS, Foundation CSS, Cryptocompare API
+# Technologies Used: 
+HTML, CSS, JS, Foundation CSS, Cryptocompare API
