@@ -279,9 +279,12 @@ var currentMarket = function (market) {
 
     var cryptoBtns = document.createElement("td");
     var ButtonPlus = document.createElement("button");
-    ButtonPlus.setAttribute("click", "submit");
-    ButtonPlus.textContent = "+";
     ButtonPlus.classList.add("button");
+    ButtonPlus.textContent = "+";
+    ButtonPlus.addEventListener("click", gotoUrl);
+    function gotoUrl (){
+    window.location.assign(`https://www.cryptocompare.com${cryptoList.CoinInfo.Url}`);
+    }
     cryptoBtns.appendChild(ButtonPlus);
     cryptoData.appendChild(cryptoBtns);
 
