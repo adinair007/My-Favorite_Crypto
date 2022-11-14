@@ -5,12 +5,14 @@ var first = document.getElementById("1");
 var second = document.getElementById("2");
 var third = document.getElementById("3");
 var fourth = document.getElementById("4");
+var userInputEl = document.getElementById("userInput")
+var cryptos = [];
 
 $("#today").html(currentDate);
 
 var liveMarket = function () {
   var apiURL =
-    "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD&api_key=7a0dd8d530d2272b9577a48c3a0653fe13dea219bd9210b461767355f5c12272";
+    "https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD&api_key=7a0dd8d530d2272b9577a48c3a0653fe13dea219bd9210b461767355f5c12272";
   fetch(apiURL).then(function (response) {
     response.json().then(function (data) {
       console.log(data);
@@ -294,3 +296,49 @@ var currentMarket = function (market) {
   }
 };
 liveMarket();
+
+var formSubmission = function (event) {
+  event.preventDefault();
+  var crypto = userInputEl.value.trim();
+
+  if (crypto) {
+    myPortfolio(crypto);
+    cryptos.unshift({ crypto });
+    userInputEl.value = "";
+  } else {
+    alert("Please enter a valid cryptocurrency");
+  }
+  saveSearch();
+  pastSearch(crypto);
+};
+
+var myPortfolio = function(crypto){
+  var apiURL = "https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD&api_key=7a0dd8d530d2272b9577a48c3a0653fe13dea219bd9210b461767355f5c12272";
+  fetch(apiURL).then(function (response) {
+    response.json().then(function (data) {
+      addPortfolio(data, crypto);
+    });
+  });
+}
+
+var pastSearch = function (pastSearch) {
+  var pastSearchEl = document.createElement("button");
+  pastSearchEl.textContent = pastSearch;
+  pastSearchEl.classList.add("button");
+  pastSearchEl.setAttribute("crypto", pastSearch);
+  pastSearchEl.setAttribute("type", "submit");
+
+  pastSearchBtnEl.append(pastSearchEl);
+};
+
+var saveSearch = function () {
+  localStorage.setItem("cryptos", JSON.stringify(cryptos));
+};
+
+var pastSearchHandler = function (event) {
+  var crypto = event.target.getAttribute("crypto");
+
+  if (crypto) {
+    currentMarket(crypto);
+  }
+};
