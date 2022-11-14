@@ -15,16 +15,6 @@ var liveMarket = function () {
     response.json().then(function (data) {
       console.log(data);
       currentMarket(data);
-    });
-  });
-};
-
-var live5Market = function () {
-  var apiURL =
-    "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=5&tsym=USD&api_key=7a0dd8d530d2272b9577a48c3a0653fe13dea219bd9210b461767355f5c12272";
-  fetch(apiURL).then(function (response) {
-    response.json().then(function (data) {
-      console.log(data);
       top5Market(data);
     });
   });
@@ -160,11 +150,65 @@ var top5Market = function (top5) {
     "24 Hour Change: " + dataListEl[3].DISPLAY.USD.CHANGE24HOUR;
   crypto4.appendChild(crypto4last24);
 
-  fourth.appendChild(crypto4);
-  third.appendChild(crypto3);
-  second.appendChild(crypto2);
+
+  var crypto1Link = document.createElement("card-section")
+  crypto1Link.classList.add("card-section");
+  var crypto1btn = document.createElement("button")
+  crypto1btn.classList.add("button");
+  crypto1btn.textContent = "Overview";
+  crypto1btn.addEventListener("click", gotoUrl1);
+  function gotoUrl1 (){
+    window.location.assign(`https://www.cryptocompare.com${dataListEl[0].CoinInfo.Url}`);
+  }
+  crypto1Link.appendChild(crypto1btn);
+  crypto1.appendChild(crypto1Link);
+
+  var crypto2Link = document.createElement("card-section")
+  crypto2Link.classList.add("card-section");
+  var crypto2btn = document.createElement("button")
+  crypto2btn.classList.add("button");
+  crypto2btn.textContent = "Overview";
+  crypto2btn.addEventListener("click", gotoUrl2);
+  function gotoUrl2 (){
+    window.location.assign(`https://www.cryptocompare.com${dataListEl[1].CoinInfo.Url}`);
+  }
+  crypto2Link.appendChild(crypto2btn);
+  crypto2.appendChild(crypto2Link);
+
+  var crypto3Link = document.createElement("card-section")
+  crypto3Link.classList.add("card-section");
+  var crypto3btn = document.createElement("button")
+  crypto3btn.classList.add("button");
+  crypto3btn.textContent = "Overview";
+  crypto3btn.addEventListener("click", gotoUrl3);
+  function gotoUrl3 (){
+    window.location.assign(`https://www.cryptocompare.com${dataListEl[2].CoinInfo.Url}`);
+  }
+  crypto3Link.appendChild(crypto3btn);
+  crypto3.appendChild(crypto3Link);
+
+  var crypto4Link = document.createElement("card-section")
+  crypto4Link.classList.add("card-section");
+  var crypto4btn = document.createElement("button")
+  crypto4btn.classList.add("button");
+  crypto4btn.textContent = "Overview";
+  crypto4btn.addEventListener("click", gotoUrl4);
+  function gotoUrl4 (){
+    window.location.assign(`https://www.cryptocompare.com${dataListEl[3].CoinInfo.Url}`);
+  }
+  crypto4Link.appendChild(crypto4btn);
+  crypto4.appendChild(crypto4Link);
+
   first.appendChild(crypto1);
+  second.appendChild(crypto2);
+  third.appendChild(crypto3);
+  fourth.appendChild(crypto4);
+  
   topFiveEl.appendChild(first);
+  topFiveEl.appendChild(second);
+  topFiveEl.appendChild(third);
+  topFiveEl.appendChild(fourth);
+
 };
 
 var currentMarket = function (market) {
@@ -251,5 +295,5 @@ var topFive = function () {
   localStorage.setItem("currentMarket", JSON.stringify(currentMarket));
 };
 
-live5Market();
+// live5Market();
 liveMarket();
