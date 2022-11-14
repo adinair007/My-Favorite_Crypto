@@ -23,7 +23,7 @@
         <a href="index.html" class="home-button" id="home-btn">Homepage</button></a>
       </section>
       
-      <div class="search-here medium-6 cell">
+      <form class="search-here medium-6 cell" id="cryptoSearch-form">
         <label
           >Add to Portfolio
           <input
@@ -34,15 +34,22 @@
           />
         </label>
         <button class="button primary" type="submit">Add</button>
-      </div>
+      </form>
 
 
       <section class="grid-container fluid text-center portfolio-display" id="portfolio-display"> 
         <div class="card-divider text-center flex-center" id="portfolio-header">
           <h3>Favourites</h3>
         </div>
+        <div class="container" id="portfolio-container">
         <div id="portfolio-list">
+          <div class="card" id="p1"></div>
+          <div class="card" id="p2"></div>
+          <div class="card" id="p3"></div>
+          <div class="card" id="p4"></div>
+          <div class="card" id="p5"></div>
         </div>
+      </div>
       </section>
     
     </main>
@@ -53,6 +60,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/portfolio.js"></script>
   </body>
 </html>
