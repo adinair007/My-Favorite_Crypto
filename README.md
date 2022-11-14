@@ -88,4 +88,4 @@ MIT License
 
 🏆 
 
-# Technologies Used: HTML, CSS ___________________________
+# Technologies Used: HTML, CSS, JS, Foundation CSS, Cryptocompare API
