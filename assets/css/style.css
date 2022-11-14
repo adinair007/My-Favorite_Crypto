@@ -8,12 +8,16 @@
 main {
     background-color: rgb(238, 204, 244);
 }
-
-
-body,h3,h1, p{
+h3 {
     font-family: 'Russo One', sans-serif;
-    background-color: rgb(238, 204, 244);
+    
+}
+
+body,h1, p{
+    font-family: 'Russo One', sans-serif;
+    background: linear-gradient(90deg, rgb(247, 165, 233) 0%, rgb(242, 222, 241)100%);
     max-width: auto;
+    border-radius: 4px;
 }
 
 .flex-center {
@@ -32,8 +36,11 @@ body,h3,h1, p{
 
 
 #topFive-header{
-   background-color:  rgb(238, 204, 244);
+    background: linear-gradient(90deg, rgb(247, 165, 233) 0%, rgb(242, 222, 241)100%);
+   border-radius: 4px;
+   
 }
+
 
 #topFive-list {
 display: flex;
@@ -43,21 +50,37 @@ display: flex;
 
 }
 
-.card {
+.card:hover {
     
     border-radius: 18px;
     background: linear-gradient(90deg, rgb(247, 165, 233) 0%, rgb(242, 222, 241)100%);
     border-radius: 4px;
     padding:auto;
     
-   
     
-    
+}
+
+.table-price {
+    border-radius: 4px;
+    background: linear-gradient(90deg, rgb(247, 165, 233) 0%, rgb(242, 222, 241)100%);
+}
+
+
+.button {
+    transition-duration: 0.4s;
+    border-radius: 12px;
+    background-color: rgb(179, 174, 174);
+  }
+  
+  .button:hover {
+    background-color: #1be333;
+    border-radius: 12px; /* Green */
+    color: white;
+  }
   
     
     
-    
-}
+
     
 
 
