@@ -45,11 +45,17 @@ THEN I am directed to that coin
 Webpage Application
 <img width="1348" alt="Screen Shot 2022-11-14 at 9 49 19 AM" src="https://user-images.githubusercontent.com/114618684/201704599-72698c5e-1971-4a06-955e-e6c46032794e.png">
 
+
+
 Select a Coin
 <img width="1344" alt="Screen Shot 2022-11-14 at 9 49 46 AM" src="https://user-images.githubusercontent.com/114618684/201704781-568050c5-54d8-4dc0-bd27-fd482e635a37.png">
 
+
+
 User directed to Crypto Compare when coin is selected
 <img width="1335" alt="Screen Shot 2022-11-14 at 9 50 11 AM" src="https://user-images.githubusercontent.com/114618684/201705752-cbe659e7-3bef-48ef-8984-93ef649b0fc8.png">
+
+
 
 Select a Coin from the List
 <img width="1348" alt="Screen Shot 2022-11-14 at 9 49 56 AM" src="https://user-images.githubusercontent.com/114618684/201705960-e5eb942f-7bbe-4f9e-8de5-de9e1cf48e42.png"
