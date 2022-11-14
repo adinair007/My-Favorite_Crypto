@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+* {
+    box-sizing: border-box;
+   
+}
+
+main {
+    background-color: rgb(238, 204, 244);
+}
+h3 {
+    font-family: 'Russo One', sans-serif;
+    
+}
+
+body,h1, p{
+    font-family: 'Russo One', sans-serif;
+    background: linear-gradient(90deg, rgb(247, 165, 233) 0%, rgb(242, 222, 241)100%);
+    max-width: auto;
+    border-radius: 4px;
+}
+
+.flex-center {
+    justify-content: center !important;
+}
+
+.entire-list {
+    border-color: rgb(1, 212, 142);
+    padding: 10rem;
+    background-color: rgb(132, 132, 189);
+    margin-top: 5rem;
+
+
+}
+
+
+
+#topFive-header{
+    background: linear-gradient(90deg, rgb(247, 165, 233) 0%, rgb(242, 222, 241)100%);
+   border-radius: 4px;
+   
+}
+
+
+#topFive-list {
+display: flex;
+
+
+
+
+}
+
+.card:hover {
+    
+    border-radius: 18px;
+    background: linear-gradient(90deg, rgb(247, 165, 233) 0%, rgb(242, 222, 241)100%);
+    border-radius: 4px;
+    padding:auto;
+    
+    
+}
+
+.table-price {
+    border-radius: 4px;
+    background: linear-gradient(90deg, rgb(247, 165, 233) 0%, rgb(242, 222, 241)100%);
+}
+
+
+.button {
+    transition-duration: 0.4s;
+    border-radius: 12px;
+    background-color: rgb(179, 174, 174);
+  }
+  
+  .button:hover {
+    background-color: #1be333;
+    border-radius: 12px; /* Green */
+    color: white;
+  }
+  
+.portfolio-button {
+    display: flex;
+    width: 150px;
+    margin-left: auto;
+    margin-right: 20px;
+    padding: 10px;
+    transition-duration: 0.4s;
+    border-radius: 12px;
+    background-color: rgb(49, 6, 240);
+    justify-content:center ;
+    color: white;
+  }
+  
+    .portfolio-button:hover {
+    background-color: #ca0ef0;
+    border-radius: 12px; /* Green */
+    color: white;
+  }
+
+  .home-button {
+    display: flex;
+    width: 150px;
+    margin-left: auto;
+    margin-right: 20px;
+    padding: 10px;
+    transition-duration: 0.4s;
+    border-radius: 12px;
+    background-color: rgb(49, 6, 240);
+    justify-content:center ;
+    color: white;
+  }
+  
+    .home-button:hover {
+    background-color: #ca0ef0;
+    border-radius: 12px; /* Green */
+    color: white;
+  }
+    
+    
+    
+
+    
+
+
+
+
+
+
+
+
+
