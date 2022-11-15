@@ -82,7 +82,7 @@ https://github.com/Staygold93
 Dominique Garrett
 https://github.com/DominiqueGarrett
 
-Third-party assets that require attribution: Cryptocompare API
+Third-party assets that require attribution: Cryptocompare API, Google Search API
 
 
 Tutorials: ____________________________
@@ -95,4 +95,4 @@ MIT License
 🏆 
 
 # Technologies Used: 
-HTML, CSS, JS, Foundation CSS, Cryptocompare API
+HTML, CSS, JS, Foundation CSS, Cryptocompare API, Google Search API
