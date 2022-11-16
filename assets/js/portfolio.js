@@ -70,6 +70,7 @@ var addPortfolio = function (info, searchCrypto) {
   myCrypto.appendChild(myCryptoLast24);
 
   portfolioContainerEl.appendChild(myCrypto);
+  portfolioDisplay.appendChild(portfolioContainerEl);
 };
 
 var pastSearch = function (pastSearch) {
