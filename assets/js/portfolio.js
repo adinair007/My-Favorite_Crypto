@@ -97,3 +97,4 @@ var pastSearchHandler = function (event) {
 cryptoInput.addEventListener("submit", formSubmission);
 portfolioDisplay.addEventListener("click", pastSearchHandler);
 myPortfolio();
+
