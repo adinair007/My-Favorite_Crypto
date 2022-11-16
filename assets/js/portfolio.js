@@ -17,6 +17,7 @@ var formSubmission = function (event) {
     alert("Please enter a valid cryptocurrency");
   }
   saveSearch();
+  addPortfolio(crypto);
   pastSearch(crypto);
 };
 
