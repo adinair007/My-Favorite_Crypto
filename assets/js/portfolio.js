@@ -42,7 +42,7 @@ var addPortfolio = function (info, searchCrypto) {
   var myCryptoHead = document.createElement("card-divider");
   myCryptoHead.classList.add("card-divider");
   myCryptoHead.textContent =
-    myCryptos.CoinInfo.FullName + "\n" + myCryptos.CoinInfo.Name;
+    myCryptos.CoinInfo.value + "\n" + myCryptos.CoinInfo.Name;
   myCrypto.appendChild(myCryptoHead);
 
   var myCryptoSymbol = document.createElement("card-section");
