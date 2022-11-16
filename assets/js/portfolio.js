@@ -17,6 +17,7 @@ var formSubmission = function (event) {
     alert("Please enter a valid cryptocurrency");
   }
   saveSearch();
+  addPortfolio(crypto);
   pastSearch(crypto);
 };
 
@@ -42,7 +43,7 @@ var addPortfolio = function (info, searchCrypto) {
   var myCryptoHead = document.createElement("card-divider");
   myCryptoHead.classList.add("card-divider");
   myCryptoHead.textContent =
-    myCryptos.CoinInfo.FullName + "\n" + myCryptos.CoinInfo.Name;
+    myCryptos.CoinInfo.value + "\n" + myCryptos.CoinInfo.Name;
   myCrypto.appendChild(myCryptoHead);
 
   var myCryptoSymbol = document.createElement("card-section");
@@ -69,6 +70,7 @@ var addPortfolio = function (info, searchCrypto) {
   myCrypto.appendChild(myCryptoLast24);
 
   portfolioContainerEl.appendChild(myCrypto);
+  // portfolioDisplay.appendChild(portfolioContainerEl);
 };
 
 var pastSearch = function (pastSearch) {
