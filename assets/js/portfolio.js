@@ -17,7 +17,6 @@ var formSubmission = function (event) {
     alert("Please enter a valid cryptocurrency");
   }
   saveSearch();
-  addPortfolio(crypto);
   pastSearch(crypto);
 };
 
@@ -70,7 +69,6 @@ var addPortfolio = function (info, searchCrypto) {
   myCrypto.appendChild(myCryptoLast24);
 
   portfolioContainerEl.appendChild(myCrypto);
-  portfolioDisplay.appendChild(portfolioContainerEl);
 };
 
 var pastSearch = function (pastSearch) {
